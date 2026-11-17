@@ -1,0 +1,604 @@
+<html>
+
+<head>
+    <meta content="text/html; charset=UTF-8" http-equiv="content-type">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Service</title>
+    <link rel="icon" href="/favicon.png" />
+    <script>
+        // 根据屏幕宽度设置根元素font-size
+        // 基准：375px宽度 = 100px字体大小
+        (function() {
+            function setRootFontSize() {
+                const baseWidth = 375;
+                const baseFontSize = 100;
+                const maxWidth = 375; // 超过此宽度使用固定字体大小
+                
+                const screenWidth = Math.min(document.documentElement.clientWidth, maxWidth);
+                const fontSize = (screenWidth / baseWidth) * baseFontSize;
+                
+                document.documentElement.style.fontSize = fontSize + 'px';
+            }
+
+            // 初始化
+            setRootFontSize();
+            
+            // 监听窗口大小变化
+            window.addEventListener('resize', setRootFontSize);
+            window.addEventListener('orientationchange', setRootFontSize);
+        })();
+    </script>
+    <style type="text/css">
+        :root {
+            /* Colors */
+            --color-primary: #2563eb;
+            --color-primary-hover: #1d4ed8;
+            --color-text: #1f2937;
+            --color-text-light: #6b7280;
+            --color-heading: #111827;
+            --color-link: #2563eb;
+            --color-link-hover: #1e40af;
+            --color-bg: #ffffff;
+            --color-bg-alt: #f9fafb;
+            --color-border: #e5e7eb;
+            
+            /* Font Family */
+            --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            
+            /* Font Sizes */
+            --fs-xs: 0.13rem;
+            --fs-sm: 0.14rem;
+            --fs-base: 0.16rem;
+            --fs-md: 0.18rem;
+            --fs-lg: 0.2rem;
+            --fs-xl: 0.22rem;
+            --fs-2xl: 0.24rem;
+            --fs-3xl: 0.3rem;
+            --fs-4xl: 0.32rem;
+            
+            /* Spacing */
+            --space-1: 0.04rem;
+            --space-2: 0.06rem;
+            --space-3: 0.08rem;
+            --space-4: 0.12rem;
+            --space-5: 0.16rem;
+            --space-6: 0.2rem;
+            --space-7: 0.24rem;
+            --space-8: 0.32rem;
+            --space-9: 0.4rem;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            font-size: var(--fs-base);
+            line-height: 1.75;
+            color: var(--color-text);
+            background-color: var(--color-bg);
+            padding: var(--space-8) var(--space-6);
+            max-width: 8.32rem;
+            margin: 0 auto;
+        }
+
+        /* Typography */
+        h1, h2, h3, h4, h5, h6 {
+            color: var(--color-heading);
+            font-weight: 700;
+            line-height: 1.3;
+            margin-top: var(--space-8);
+            margin-bottom: var(--space-5);
+        }
+
+        h1 {
+            font-size: var(--fs-3xl);
+            border-bottom: 2px solid var(--color-primary);
+            padding-bottom: var(--space-3);
+            margin-top: var(--space-9);
+        }
+
+        h2 {
+            font-size: var(--fs-2xl);
+            color: var(--color-primary);
+        }
+
+        h3 {
+            font-size: var(--fs-lg);
+        }
+
+        h4 {
+            font-size: var(--fs-md);
+        }
+
+        h5, h6 {
+            font-size: var(--fs-base);
+        }
+
+        p {
+            font-size: var(--fs-base);
+            margin-bottom: var(--space-5);
+        }
+
+        /* Links */
+        a {
+            color: var(--color-link);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: all 0.2s ease;
+            word-break: break-all;
+        }
+
+        a:hover { 
+            color: var(--color-link-hover);
+            border-bottom-color: var(--color-link-hover); 
+        }
+
+        a:active {
+            color: var(--color-primary-hover);
+        }
+
+        /* Lists */
+        ol, ul {
+            margin: var(--space-5) 0;
+            padding-left: var(--space-7);
+        }
+
+        li {
+            font-size: var(--fs-base);
+            margin-bottom: var(--space-3);
+            line-height: 1.75;
+        }
+
+        ol > li {
+            padding-left: var(--space-3);
+        }
+
+        ul > li {
+            list-style-type: disc;
+        }
+        
+        /* Nested lists */
+        ol ol, ol ul, ul ol, ul ul {
+            margin-top: var(--space-3);
+            margin-bottom: var(--space-3);
+        }
+
+        /* Main title */
+        .doc-title {
+            font-size: var(--fs-4xl);
+            font-weight: 800;
+            text-align: center;
+            color: var(--color-heading);
+            margin: var(--space-8) 0 var(--space-5);
+            padding-bottom: var(--space-5);
+            border-bottom: none;
+        }
+
+        /* Last updated */
+        .last-updated {
+            text-align: center;
+            font-style: italic;
+            color: var(--color-text-light);
+            margin-bottom: var(--space-8);
+            padding-bottom: var(--space-8);
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        /* Warning box */
+        .warning-box {
+            background-color: #fef3c7;
+            border: 1px solid #f59e0b;
+            border-radius: var(--space-3);
+            padding: var(--space-5);
+            margin-bottom: var(--space-7);
+            font-weight: 600;
+            color: #92400e;
+        }
+
+        /* Table of Contents */
+        .toc {
+            background-color: var(--color-bg-alt);
+            border-radius: var(--space-4);
+            padding: var(--space-7) var(--space-8);
+            margin: var(--space-8) 0;
+            border: 1px solid var(--color-border);
+        }
+
+        .toc p {
+            margin-bottom: var(--space-3);
+        }
+
+        .toc a {
+            display: inline-block;
+            padding: var(--space-1) 0;
+            font-weight: 500;
+        }
+
+        .toc a:hover {
+            transform: translateX(4px);
+        }
+
+        /* Section list */
+        .section-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .section-list > li {
+            margin-bottom: var(--space-8);
+        }
+
+        .section-list > li h1 {
+            font-size: var(--fs-xl);
+            margin-top: 0;
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        /* Subsection lists */
+        .subsection-list {
+            counter-reset: subsection;
+            list-style: none;
+            margin-top: var(--space-5);
+        }
+
+        .subsection-list > li {
+            counter-increment: subsection;
+            padding-left: var(--space-8);
+            position: relative;
+            margin-bottom: var(--space-5);
+        }
+
+        .subsection-list > li::before {
+            content: counter(subsection, lower-alpha) ")";
+            position: absolute;
+            left: 0;
+            font-weight: 600;
+            color: var(--color-text-light);
+        }
+
+        /* Bold text */
+        strong, b {
+            font-weight: 600;
+            color: var(--color-heading);
+        }
+
+        /* Italic text */
+        em, i {
+            font-style: italic;
+        }
+        
+        /* Horizontal rule */
+        hr { 
+            border: none;
+            border-top: 1px solid var(--color-border);
+            margin: var(--space-8) 0;
+        }
+
+        /* Email links highlight */
+        a[href^="mailto:"] {
+            background: linear-gradient(to right, transparent 50%, rgba(37, 99, 235, 0.1) 50%);
+            background-size: 200% 100%;
+            background-position: 0 0;
+            transition: background-position 0.3s ease;
+        }
+
+        a[href^="mailto:"]:hover {
+            background-position: -100% 0;
+        }
+
+        /* Print styles */
+        @media print {
+            body {
+                padding: 0;
+                font-size: 12pt;
+            }
+
+            a {
+                color: var(--color-text);
+                text-decoration: underline;
+            }
+
+            .toc {
+                background: none;
+                border: 1px solid #ccc;
+            }
+        }
+    </style>
+</head>
+
+<body class="doc-content"><aside id="legal-routing-review" style="margin:16px;padding:14px;border:1px solid #bd892f;background:#fff8e7;color:#59451f;line-height:1.5">Review draft — Former-publisher routing has been removed. Representative, provider and country-specific information requiring completion is marked. Not published.</aside>
+    <div>
+        <p></p>
+    </div>
+    <p class="doc-title">Terms of Service</p>
+    <p class="last-updated">Last updated: January 1, 2026</p>
+    
+    <div class="warning-box">
+        THESE TERMS OF SERVICE CONTAIN A BINDING INDIVIDUAL ARBITRATION AGREEMENT AND CLASS ACTION WAIVER THAT AFFECTS YOUR RIGHTS WITH RESPECT TO ANY DISPUTE BETWEEN YOU AND META MARKET İÇ VE DIŞ TİCARET İTHALAT İHRACAT LİMİTED ŞİRKETİ AND REQUIRES THE MANDATORY ARBITRATION OF DISPUTES ON AN INDIVIDUAL BASIS TO RESOLVE DISPUTES IN CERTAIN CIRCUMSTANCES, RATHER THAN JURY TRIALS OR CLASS ACTION LAWSUITS. YOU HAVE THE RIGHT TO OPT OUT. VIEW THESE TERMS IN SECTION 15 BELOW OR CLICK HERE FOR MORE INFORMATION.
+    </div>
+
+    <p>This Terms of Service ("<strong>Terms</strong>") is a legal agreement between you and META MARKET İÇ VE DIŞ TİCARET İTHALAT İHRACAT LİMİTED ŞİRKETİ and its subsidiaries and affiliated companies ("Meta Games," "Company," "we," "us" or "our"), governing your use of our website ("<strong>Website</strong>"), our mobile applications ("<strong>Apps</strong>" or "our <strong>App</strong>") that link to these Terms, or any other websites, pages, features, or content owned and operated by us that link to these Terms (collectively, "<strong>Services</strong>"). These Terms explain the terms and conditions that will govern your use of the Services.</p>
+
+    <p>By accessing or using our Services, you indicate that you agree to be bound by these Terms. If you do not wish to be bound by these Terms, please do not use the Services.</p>
+
+    <div class="toc">
+        <p><a href="#s1">1. Eligibility</a></p>
+        <p><a href="#s2">2. Updates to these Terms of Service</a></p>
+        <p><a href="#s3">3. Privacy Policy</a></p>
+        <p><a href="#s4">4. Account Registration</a></p>
+        <p><a href="#s5">5. Use of the Services and Prohibited Activities</a></p>
+        <p><a href="#s6">6. Linking</a></p>
+        <p><a href="#s7">7. Termination</a></p>
+        <p><a href="#s8">8. Premium Features</a></p>
+        <p><a href="#s9">9. Intellectual Property Rights</a></p>
+        <p><a href="#s10">10. Content Submitted by You</a></p>
+        <p><a href="#s11">11. Third-Party App Stores</a></p>
+        <p><a href="#s12">12. Third Party Sites</a></p>
+        <p><a href="#s13">13. Disclaimer of Medical Advice</a></p>
+        <p><a href="#s14">14. Other Policies</a></p>
+        <p><a href="#s15">15. Legal Disputes, Arbitration Agreement, and Class Action Waiver</a></p>
+        <p><a href="#s16">16. Warranty Disclaimer; Limitation on Liability</a></p>
+        <p><a href="#s17">17. Indemnity</a></p>
+        <p><a href="#s18">18. Notice to New Jersey Users</a></p>
+        <p><a href="#s19">19. Notice to California Users</a></p>
+        <p><a href="#s20">20. Digital Millennium Copyright Act Policy</a></p>
+        <p><a href="#s21">21. General Terms</a></p>
+        <p><a href="#s22">22. Contact information</a></p>
+    </div>
+
+    <hr>
+
+    <ol class="section-list">
+        <li id="s1">
+            <h1>Eligibility</h1>
+            <p>When you use the Services, you represent that: (a) <strong>you are at least 16 years of age (or of the age of consent in your jurisdiction)</strong>, (b) the information you submit is truthful and accurate; (c) your use of the Services do not violate any applicable law or regulation; (d) you are of sufficient legal age or otherwise have the legal capacity to legally enter into these Terms.</p>
+        </li>
+
+        <li id="s2">
+            <h1>Updates to these Terms of Service</h1>
+            <p>We may modify these Terms of Service from time to time. We will notify you of material changes to these Terms of Service by posting the amended terms on the Services before the effective date of the changes. In addition, you will be required to accept the new Terms of Service the first time you visit the Service and log in to your user account after the new Terms of Service take effect. If you do not agree with the proposed changes, you should discontinue your use of the Service prior to the time the new Terms of Service take effect. If you continue using the Service after the new terms take effect, you understand and acknowledge that you will be bound by the modified Terms of Service.</p>
+        </li>
+
+        <li id="s3">
+            <h1>Privacy Policy</h1>
+            <p>In connection with your use of the Service, please review our <a href="privacy.html">Privacy Policy</a> to understand how we use the information we collect from you when you access, visit or use the Service. You may reach out to us with any questions via the contact information included within the Privacy Policy.</p>
+        </li>
+
+        <li id="s4">
+            <h1>Account Registration</h1>
+            <p>To access certain features of our Services, you may be required to register for an account ("<strong>Account</strong>"). As part of your Account, you may be able to create a user profile, sync your activity across devices, and access certain features restricted to registered members only. You can sign up for an Account by completing the registration process when prompted in our App. We may reject, and you may not use, a user ID (or e-mail address) for any reason in our sole discretion. For example, we may reject a user ID (or e-mail address) that is already being used by someone else; that may be construed as impersonating another person; that belongs to another person; that violates the intellectual property or other rights of any person; or that is offensive. You may only have one active Account on an App at any given time and you may not allow other people to use your Account to access the Services.</p>
+            <p>If you register an Account, you agree: (a) to provide true, accurate, current and complete information about yourself, whether provided by entering information in the Service's registration form or by authorizing your social media account to provide us with your information (the "Registration Data"); (b) to maintain and promptly update the Registration Data to keep it true, accurate, current and complete; and (c) that you will not engage in any of the prohibited activities in Section 5 below.</p>
+            <p>You agree that you will not share your Account login and password and are responsible for maintaining their confidentiality. You assume all responsibility for actions taken under your Account, including any financial liability incurred. In addition, you agree to sign out from your Account at the end of each session if you are using a device that is shared with other people.</p>
+            <p>You agree to notify us of any unauthorized use of your username, log-in ID, password or any other breach of security that you become aware of involving or relating to a Service by contacting us as soon as possible. We reserve the right to take any and all actions we deem necessary or reasonable to maintain the security of our Services and your Account, including without limitation, terminating your Account, changing your password or requesting information to authorize transactions on your Account. WE EXPLICITLY DISCLAIM LIABILITY FOR ANY AND ALL LOSSES AND DAMAGES ARISING FROM YOUR FAILURE TO COMPLY WITH THIS SECTION.</p>
+        </li>
+
+        <li id="s5">
+            <h1>Use of the Services and Prohibited Activities</h1>
+            <p>Our Services are intended for learning, gaming, and entertainment purposes only. You understand and agree that the Services are not intended or designed to diagnose, prevent, or treat any condition or disease, to ascertain the state of your health, or to be a substitute for professional medical care tailored to your individual condition and situation. Not all activities described on the Services are suitable for everyone. You assume full responsibility for your use of the Services.</p>
+            <p>Our Services may be suspended temporarily without notice to you for security purposes, maintenance or repair, system failures, or other similar circumstances (collectively, "<strong>Service Interruptions</strong>"). You acknowledge and agree that you are not entitled to a refund or rebate related to such Service Interruptions.</p>
+            <p>While using the Services, you are required to comply with all applicable statutes, orders, regulations, rules and other laws. You agree that in connection with your use of the Services, you will not:</p>
+            <ul>
+                <li>use the Services for any improper, fraudulent, illegal, or unauthorized purpose, including collecting usernames and/or email addresses of other users by electronic or other means, using the system to send unsolicited or commercial emails or other communications, or engaging in unauthorized framing, mirroring, or linking to, the Services without our express written consent;</li>
+                <li>post, upload, publish, submit or transmit any Content that: (i) infringes, misappropriates or violates a third party's patent, copyright, trademark, trade secret, moral rights or other intellectual property rights, or rights of publicity or privacy; (ii) violates, or encourages any conduct that would violate, any applicable law or regulation or would give rise to civil liability; (iii) is fraudulent, false, misleading or deceptive; (iv) is defamatory, obscene, pornographic, vulgar or offensive; (v) promotes discrimination, bigotry, racism, hatred, harassment or harm against any individual or group; (vi) is violent or threatening or promotes violence or actions that are threatening to any person or entity; or (vii) promotes illegal or harmful activities or substances;</li>
+                <li>post to or transmit through the Services any sensitive personally identifiable information about yourself or third parties, such as social security, credit card or bank account numbers, health or medical information, or other information concerning personal matters, unless specifically requested by us;</li>
+                <li>take any action that would interfere with, disrupt, or create an undue burden on the Service or the networks, infrastructure, or functionalities connected to the Services;</li>
+                <li>take any action that would interfere with another party's use of the Service;</li>
+                <li>use any meta tags, "hidden text," agents, robots, scripts, spiders, crawlers or other tools or means, whether manual or automated, to collect, retrieve, scrape, index, mine, republish, redistribute, transmit, sell, license, download, access or manage any information from the Services or any other user of the Services;</li>
+                <li>distribute, transmit, reproduce, or otherwise make available any software viruses, worms, spyware, adware, malware, program, code, file, or other technology that is harmful or invasive or is intended to damage or hijack the operation of, or monitor the use of, any hardware, software or equipment;</li>
+                <li>impersonate any other person or entity, sell or let others use your profile or password, provide false or misleading identification or address information, or express or imply that we endorse any statement you make;</li>
+                <li>decompile, disassemble, modify, translate, adapt, reverse engineer, create derivative works from or sublicense the Service, or any portion thereof;</li>
+                <li>build a competitive product or service using the Services, build a product or service using similar ideas, features, functions, or graphics as the Services or determine whether the Services are within the scope of any patent;</li>
+                <li>violate or interfere with any rights of us, our users, or any other third parties, including intellectual property, privacy, or publicity rights;</li>
+                <li>circumvent, disable or otherwise interfere with security-related features of the Services or features that prevent or restrict use, access, or copying, or to enforce other limitation of use on the Services; or</li>
+                <li>Assist or permit any persons in violating these Terms or other applicable laws or rules governing the use of the Sites.</li>
+    </ul>
+        </li>
+
+        <li id="s6">
+            <h1>Linking</h1>
+            <p>You are granted a limited, non-exclusive right to create text hyperlinks to the Services for informational purposes, provided such links do not portray us in a false, misleading, derogatory or otherwise defamatory manner and provided that the linking site does not contain any material that is unlawful, harmful, harassing, defamatory, threatening, intimidating, fraudulent, tortious, vulgar, obscene, hateful, pornographic, spam, discriminatory, violative of privacy or publicity rights, infringing of intellectual property or other proprietary rights, or otherwise objectionable in our sole discretion, including unauthorized or unsolicited advertising. Additionally, notwithstanding the foregoing, and subject to compliance with any instructions posted in the robots.txt file located in a Website's root directory, we grant to the operators of public search engines permission to use spiders to copy Content from the Website for the sole purpose of (and solely to the extent necessary for) creating publicly available, searchable indices of such Content, but not caches or archives of such Content. We may revoke these permissions at any time.</p>
+        </li>
+
+        <li id="s7">
+            <h1>Termination</h1>
+            <p>The Services and these Terms are in effect until terminated by you or us. We may terminate these Terms by notifying you using any contact information we have about you or by posting such termination on the Website or in your Account. You may terminate these Terms by providing written notice of termination, including your detailed contact information and any Account information or other Service credentials, to us using the information in the Contact Us section. Without limiting any other provision of these Terms, we reserve the right to, in our sole discretion, and without notice or liability, deny access to our Services to any person for any reason, including, without limitation, for engaging in the prohibited activities, breach of any representation, warranty or covenant contained in these Terms, or breach of any applicable law or regulation.</p>
+            <p>The provisions of these Terms concerning protection of intellectual property rights, authorized use, User Content, disclaimers, limitations of liability, indemnity, and disputes, as well as any other provisions that by their nature should survive, shall survive any such termination.</p>
+            <p>Upon any such termination, (i) you must destroy all Content obtained from the Services and all copies thereof; (ii) you will immediately cease all use of and access to the Services; (iii) we may delete or disable access to any of your User Content at any time; (iv) and we may delete your Account at any time. You agree that if your use of the Services is terminated pursuant to these Terms, you will not attempt to use the Services under any name, real or assumed, and further agree that if you violate this restriction after being terminated, you will indemnify and hold us harmless from any and all liability that we may incur therefore. Your use of the Services after termination will be a violation of this Section, which survives any termination.</p>
+            <p>Even after the termination of these Terms, your Account, or your access to the Services, any User Content you have posted or submitted may remain on the Website or Apps indefinitely.</p>
+        </li>
+
+        <li id="s8">
+            <h1>Premium Features</h1>
+            <p>Some of our Services may allow you to purchase premium features that provide an enhanced experience and/or expanded functionalities ("<strong>Premium Features</strong>"). Although we have a variety of Apps that offer different types of Premium Features, the provisions of these Terms apply to all of them. We may make improvements and/or changes to the Premium Features or terminate our offering of Premium Features at any time without notice. We also: (a) reserve the right to change the Premium Features advertised or offered for sale, the prices or specifications of such Premium Features, and any promotional offers at any time without any notice or liability to you or any other person; (b) do not warrant that information provided about the Premium Features (including without limitation product descriptions, colors or photographs) is accurate, complete, reliable, current or error-free; and (c) reserve the right to modify, cancel, terminate or not process orders (including accepted orders) where the price or other material information regarding Premium Features is inaccurate or for any other reason in our sole discretion. If we do not process an order for such reason, we will either not charge you or will apply credit to the payment type used in the order. Some jurisdictions may not allow the exclusions and disclaimers of certain implied warranties, so some of the provisions of this section may not apply to you.</p>
+            <ol>
+                <li><strong>Purchases and Subscriptions</strong>
+                    <p>When you purchase Premium Features through the App, you can choose to make a one-time purchase giving you lifetime access to the Premium Features ("<strong>Lifetime Access</strong>") or you can purchase a monthly or yearly subscription to access the Premium Features ("<strong>Subscription</strong>"). When you purchase a Subscription, we automatically bill the credit or debit card on file ("<strong>Payment Method</strong>") for the Premium Features based on the term you select (e.g., on a monthly or yearly basis) until terminated. You can change your Subscription frequency or cancel your Subscription through your Apple App Store, Google Play Store, or other Third-Party App Store (defined below) settings at any time within 24 hours of the next scheduled payment date. By purchasing a Subscription, you authorize us to charge your Payment Method up to 24 hours before the end of the current Subscription term.</p>
+                    <p>To purchase Lifetime Access or a Subscription, you will have to provide a valid, accepted Payment Method to either the Apple App Store or Google Play Store. By submitting such information, you agree and warrant that the Apple App Store or Google Play Store has the right to use or provide the information to third parties for payment processing. You may be subject to additional terms and conditions imposed by Apple or Google.</p>
+        </li>
+                <li><strong>No Refunds</strong>
+                    <p>Payments for Lifetime Access and Subscriptions are nonrefundable. We do not provide partial refunds or credits for unused periods. Following any cancellation of your Subscription you will continue to have access to the Premium Features through the end of your Subscription term.</p>
+        </li>
+                <li><strong>Taxes</strong>
+                    <p>If we are legally required to collect sales tax on your order, the tax amount will be added automatically to your purchase price. On rare occasions an error in our tax database may cause the sales tax charge to be incorrect. If this happens, at any time up to two years from your date of purchase you may contact us for a refund of tax overcharges. This right to a refund is your exclusive remedy for sales tax errors.</p>
+        </li>
+                <li><strong>Free Trial</strong>
+                    <p>We may offer a free trial of the Premium Features ("<strong>Free Trial</strong>"). We may limit the eligibility, duration, and features available through the Free Trial in our sole discretion. You must provide a Payment Method and choose a Subscription frequency in order to access the Free Trial. At the end of the Free Trial term, the Subscription chosen will automatically begin and your Payment Method will be charged the subscription price agreed upon.</p>
+        </li>
+                <li><strong>For European Economic Area ("EEA"), Swiss, and United Kingdom ("UK") residents only</strong>
+                    <p>Notwithstanding the foregoing, if you are a resident of the EEA, Switzerland or the UK, you have 14 days from the date you signed up for a Subscription to cancel for any reason and receive a refund, provided that we may charge you or withhold from your refund the value of any Premium Features used through your account during such period. If you signed up for a Free Trial, the 14-day period begins on the date that you signed up for the Free Trial. If we accept your refund request, you will receive a credit to your original Payment Method. If we are unable to credit that Payment Method, your refund may not be completed. We may contact you for new payment information or provide your refund in another way.</p>
+                    <p>To exercise this right, you must inform us of your unequivocal decision to withdraw from your contract in a letter to [Karacaibrahim Mah. Gazi Hasan Tepeli Sk. No: 28 İç Kapı No: 11 Merkez / Kırklareli, Türkiye] or by email at <a href="mailto:info@purevissage.com">info@purevissage.com</a>.</p>
+        </li>
+    </ol>
+        </li>
+
+        <li id="s9">
+            <h1>Intellectual Property Rights</h1>
+            <p>All names, logos, text, designs, graphics, trade dress, characters, interfaces, code, software, images, sounds, videos, photographs and other content appearing in or on the Services (the "Content") are protected by copyright, trademarks, and other intellectual property rights under the United States and foreign laws and international conventions, and are owned by or used with permission or under license by Meta Games and its licensors. You do not acquire any right, title or interest in any Content by accessing or using the Services. Any rights not expressly granted herein are reserved. Except as set forth in these Terms, the use of any Content is strictly prohibited.</p>
+            <p>Subject to your compliance with these Terms, Meta Games grants you a limited, non-exclusive, non-transferable license to (1) access and use the Services and the Content within solely for your own personal, non-commercial purposes and (2) download and install a copy of the App on a mobile device or computer that you own or control and to run such copy of the App solely for your own personal, non-commercial purposes. You may not copy the App, except for making one copy for backup or archival purposes. If you make a copy for your own backup or archival purposes, you must retain all trademark, copyright and other proprietary notices contained in and on the Services. No Content may be reproduced, republished, performed, displayed, downloaded, posted, transmitted, or distributed in any way without written permission of Meta Games, except that you may download or print one copy of specific Content made available for your downloading or printing for your personal, non-commercial home use, subject to your compliance with these Terms and retain the same solely for as long as you continue to be permitted to access the Services. To use Content under such an exception, you must (1) keep any copyright, trademark, or other proprietary notices intact, (2) use such Content pursuant to any licenses associated with such Content, (3) not copy or post such Content on any networked computer or broadcast it in any media, (4) make no modifications to any such Content, and (5) make no additional representations or warranties relating to such Content. Except as otherwise expressly authorized herein or in writing by us, you agree not to reproduce, modify, rent, lease, perform, display, transmit, loan, sell, distribute, or create derivative works based (in whole or in part) on all or any part of an App or the Content.</p>
+        </li>
+
+        <li id="s10">
+            <h1>Content Submitted by You</h1>
+            <p>You are entirely responsible for all content that you make available through the Services, post to the Services, upload to us, or transmit through the Apps or Website, whether or not solicited by Meta Games, including but not limited to, text, reviews, posts, images, videos, designs, illustrations, photographs or other intellectual property ("<strong>User Content</strong>") You agree, represent and warrant that any User Content you post or transmit through our Services is truthful, accurate, not misleading and offered in good faith, and that you have the right to transmit such User Content. You shall not upload, post or otherwise make available on or through the Services any User Content protected by copyright, trademark or other proprietary right of any third party without the express written permission of the owner of such right(s). You shall be solely liable for any damages resulting from any infringement of copyright, trademark, proprietary rights, or any other harm resulting from such User Content.</p>
+            <p>PLEASE DO NOT POST OR SEND US ANY USER CONTENT, IDEAS, SUGGESTIONS, OR OTHER USER CONTENT THAT YOU WISH TO KEEP PRIVATE OR PROPRIETARY OR FOR WHICH YOU EXPECT TO RECEIVE COMPENSATION. If you submit any User Content to Meta Games, you automatically grant to Meta Games (or warrant that the owner of such information and material has expressly granted to Meta Games) a royalty-free, worldwide, perpetual, sublicensable, irrevocable, and unrestricted right and license to (a) use, copy, display, perform, modify, adapt, publish, and distribute, or otherwise make available such User Content (including any associated intellectual property rights), in whole or in part, for any purpose, and (b) to incorporate such User Content in other works in any form, media, product, service or technology now known or hereafter developed for any purpose, including sale, manufacture or advertising (and to exercise all intellectual property rights associated with such products or other works). Additionally, you irrevocably waive any "moral rights" or other rights with respect to attribution of authorship or integrity of your User Content that you may have under any applicable law or legal theory.</p>
+            <p>You agree that: (i) we are free to use such User Content for any purpose, (ii) such User Content will be deemed not to be confidential or proprietary (iii) we may have something similar already under consideration or in development, and (iv) you are not entitled to any compensation or reimbursement of any kind from us under any circumstances unless otherwise expressly agreed in writing by us. Be aware that we have no obligation to keep User Content confidential unless explicitly stated.</p>
+            <ol>
+                <li><strong>Interactive Features and Forums</strong>
+                    <p>We may host message boards, user-generated content, reviews, blogs, games, and other interactive features or services through which users can post or upload User Content or otherwise interact with our Services or something on them (each, a "<strong>Forum</strong>"). We do not endorse User Content posted in Forums, cannot guarantee the accuracy or authenticity of such User Content, and are acting only as a passive conduit for such User Content. User Content may include suggestions for uses of our products that have not been evaluated or approved by us; we do not recommend such uses. WE RESERVE THE RIGHT TO REMOVE ANY FORUM CONTENT, OF ANY VARIETY, AT ANY TIME FOR ANY REASON.</p>
+                    <p>You acknowledge and agree that Forums are public spaces and that your participation in such Forums creates no expectation of privacy. Further, you acknowledge that any User Content you communicate in Forums may be seen and used by others. You understand that our staff, outside contributors, or other users connected with us may participate in Forums or other aspects of the Services and may employ anonymous user names when doing so. Any user failing to comply with these Terms may be expelled from and refused continued access to Forums in the future. However, we are not responsible for User Content that you or others choose to communicate in Forums, or for your actions or the actions of other users. IF YOU CHOOSE TO MAKE ANY OF YOUR PERSONAL INFORMATION OR OTHER USER CONTENT PUBLICLY AVAILABLE IN A FORUM OR OTHERWISE ON OR THROUGH THE SITES, YOU DO SO AT YOUR OWN RISK.</p>
+        </li>
+                <li><strong>Our Rights</strong>
+                    <p>You acknowledge and agree that we reserve the right (but have no obligation) to do one or all of the following, at our sole discretion: (a) evaluate User Content before allowing it to be posted on a Site, in an App, or on any Forum; (b) monitor User Content and Forums; (c) alter, remove, reject, or refuse to post or allow to be posted, without notice to you, any User Content, for any reason or for no reason whatsoever; provided, however, that we shall have no obligation or liability to you for failure to do so or for doing so in any particular manner; and/or (d) disclose any User Content, and the circumstances surrounding its transmission, to any third party in order to operate the Services, to protect us, our users, to comply with legal obligations or governmental requests, to enforce these Terms, or for any other reason or purpose we deem appropriate. If you see User Content on the Services that you believe violates these Terms, please contact us.</p>
+        </li>
+    </ol>
+        </li>
+
+        <li id="s11">
+            <h1>Third-Party App Stores</h1>
+            <p>You acknowledge and agree that the availability of the Services may be dependent on third-party websites from which you download the Service (each a "<strong>Third Party App Store</strong>"). You acknowledge that these Terms of Service are between you and Meta Games and not with the applicable Third-Party App Store. Each Third-Party App Store may have its own terms and conditions to which you must agree before downloading the Service from it. These terms provided by the Third Party App Store may provide us, and the Third Party App Store, additional rights while posing additional obligations or restrictions on you. Please review such terms, you are solely responsible for reviewing and understanding those terms and ensuring you have the latest version.</p>
+            <p>If you downloaded an App from the Apple "App Store," you are subject to Apple's Licensed Application End User License Agreement, available at https://www.apple.com/legal/internet-services/itunes/dev/stdeula/. If you downloaded the App from the "Google Play" store, you are subject to the Google Play Terms of Service available at: https://play.google.com/about/play-terms/index.html. If you used a different third party service, check with the applicable Third Party App Store to determine what additional terms may apply.</p>
+        </li>
+
+        <li id="s12">
+            <h1>Third Party Sites</h1>
+            <p>The Service may contain links to websites, social media pages, mobile applications, or other services operated by third parties ("<strong>Third Party Sites</strong>"). For example, you may be able to share information with Third-Party Sites through links on the Services. If you click these links, you will leave our Website or Apps. If you decide to visit any external link, you do so at your own risk and it is your responsibility to take all protective measures to guard against viruses or other destructive elements. We do not own or operate the Third-Party Sites, and we have not reviewed all of the material, including goods or services, made available through Third-Party Sites. The availability of these links on the Services does not represent, warrant or imply that we endorse or otherwise sponsor any Third-Party Sites or any materials, opinions, goods or services available on them. Third-party materials accessed through or used by means of the Third-Party Sites may also be protected by copyright and other intellectual property laws.</p>
+            <p>These Terms of Service do not apply to third-party sites. Before visiting a Third-Party Site through links or other means provided on or through the Service, you should review the Third-Party Site's terms and conditions and privacy policy, and inform yourself of the regulations, policies and practices of these Third-Party Sites.</p>
+            <p>YOU AGREE THAT YOUR USE OF THIRD-PARTY WEBSITES, APPLICATIONS, SERVICES AND RESOURCES, INCLUDING WITHOUT LIMITATION YOUR USE OF ANY CONTENT, INFORMATION, DATA, ADVERTISING, PRODUCTS, OR OTHER MATERIALS ON OR AVAILABLE THROUGH SUCH THIRD PARTIES, IS AT YOUR OWN RISK AND IS SUBJECT TO THE TERMS AND CONDITIONS OF USE APPLICABLE TO SUCH SITES AND RESOURCES.</p>
+        </li>
+
+        <li id="s13">
+            <h1>Disclaimer of Medical Advice</h1>
+            <p>IN THE EVENT OF A MEDICAL EMERGENCY, CONTACT EMERGENCY SERVICES IMMEDIATELY.</p>
+            <p>THE CONTENT CONTAINED IN SOME OF OUR SERVICES MAY CONTAIN INFORMATION ABOUT PROCESSES AND/OR THERAPIES THAT ARE NOT EVALUATED OR REGULATED BY THE UNITED STATES FOOD AND DRUG ADMINISTRATION. OUR SITES MAY ALSO CONTAIN INFORMATION ABOUT MEDICAL CONDITIONS AND MEDICAL TREATMENTS. SUCH INFORMATION IS INTENDED AS AN EDUCATIONAL AID ONLY. IT IS NOT INTENDED AS MEDICAL ADVICE FOR INDIVIDUAL CONDITIONS OR TREATMENT. IT IS NOT A SUBSTITUTE FOR A PROFESSIONAL MEDICAL DIAGNOSIS, NOR DOES IT REPLACE THE NEED FOR SERVICES PROVIDED BY MEDICAL PROFESSIONALS.</p>
+            <p>ALWAYS SEEK THE ADVICE OF YOUR PHYSICIAN, PHARMACIST OR OTHER QUALIFIED HEALTH CARE PROVIDER WITH ANY QUESTIONS YOU MAY HAVE REGARDING A MEDICAL CONDITION OR TREATMENT OR A CHANGE IN YOUR PERSONAL CARE OR HEALTH CARE REGIME. NEVER DISREGARD PROFESSIONAL MEDICAL ADVICE OR DELAY IN SEEKING IT BECAUSE OF SOMETHING YOU HAVE READ ON A SITE. WE ARE NOT RESPONSIBLE FOR THE RESULTS OF YOUR USE OF THE CONTENT, INCLUDING, BUT NOT LIMITED TO, YOU CHOOSING TO SEEK OR NOT TO SEEK PROFESSIONAL MEDICAL CARE, OR YOU CHOOSING OR NOT CHOOSING SPECIFIC TREATMENT BASED ON THE CONTENT.</p>
+        </li>
+
+        <li id="s14">
+            <h1>Other Policies</h1>
+            <p>These Terms apply exclusively to your access to, and use of, the Services and does not alter in any way the terms or conditions of any other agreement you may have with us for products, services, programs or otherwise.</p>
+            <p>Our use of your personal information is governed by our Privacy Policy, which you should refer to in order to fully understand how we use and collect information. Should we employ you, these Terms are not considered part of an employment contract or an offer for employment.</p>
+        </li>
+
+        <li id="s15">
+            <h1>Legal Disputes, Arbitration Agreement, and Class Action Waiver</h1>
+            <p><strong>PLEASE READ THIS SECTION CAREFULLY BECAUSE IT REQUIRES THE PARTIES TO ARBITRATE THEIR DISPUTES AND LIMITS THE MANNER IN WHICH YOU CAN SEEK RELIEF FROM US. YOU UNDERSTAND THAT, ABSENT THIS MANDATORY PROVISION, YOU WOULD HAVE THE RIGHT TO SUE IN COURT AND HAVE A JURY TRIAL. YOU FURTHER UNDERSTAND THAT THE RIGHTS TO DISCOVERY AND APPEALS MAY BE MORE LIMITED IN ARBITRATION THAN IN COURT. IF YOU ARE LOCATED IN THE EU OR THE UK, THESE PROVISIONS WILL NOT AFFECT YOUR RIGHT TO RESOLVE DISPUTES IN YOUR LOCAL COURT OR TRIBUNAL.</strong> ARBITRATION USES A NEUTRAL ARBITRATOR INSTEAD OF A JUDGE OR JURY, ALLOWS FOR MORE LIMITED DISCOVERY THAN IN COURT, AND IS SUBJECT TO VERY LIMITED REVIEW BY COURTS. YOU MAY CHOOSE TO BE REPRESENTED BY A LAWYER IN ARBITRATION OR PROCEED WITHOUT ONE. THIS ARBITRATION PROVISION SHALL SURVIVE TERMINATION OF THESE TERMS.</p>
+            <ol>
+                <li><strong>INITIAL DISPUTE RESOLUTION</strong>
+                    <p>We want to address your concerns without needing a formal legal case. Most concerns may be quickly resolved in this manner. For any dispute with Meta Games, you agree to first contact us at info@purevissage.com or by mail at META MARKET İÇ VE DIŞ TİCARET İTHALAT İHRACAT LİMİTED ŞİRKETİ, and attempt to resolve the dispute with us informally to address any concerns you may have regarding your use of the Services. Your Notice of Dispute must be individual to you and must include, as applicable, your name, your email address, and your residential address. The Notice of Dispute also must explain the facts of the dispute as you understand them and tell us what you want us to do to resolve the issue. You agree to use best efforts to settle any dispute, claim, question, or disagreement directly through consultation and good faith negotiations, and you agree that a Notice of Dispute containing all of the information required above, followed by at least 60 days of good faith negotiation, shall be a precondition to either party initiating a lawsuit or arbitration. A Notice of Dispute will not be valid unless it contains all of the information required by this paragraph. If you commence an arbitration without having previously provided a valid and compliant Notice of Dispute, you and we agree that the applicable arbitration provider (or the arbitrator, if one has been appointed) must suspend the arbitration pending compliance with this paragraph. You and we authorize the arbitration provider or the arbitrator to decide summarily whether the party that commenced an arbitration complied with these notice requirements, relying solely on this Agreement and the Notice of Dispute provided (if any). All statutes of limitation shall be tolled while the parties engage in the informal dispute resolution process required by this paragraph.</p>
+                </li>
+                <li><strong>AGREEMENT TO BINDING ARBITRATION</strong>
+                    <p>In the unlikely event that we do not reach an agreed upon solution within a period of sixty (60) days from the time informal dispute resolution is pursued pursuant to Section 15(a) above, then either you or we may initiate binding arbitration. Except in the event of a Mass Arbitration (as defined below) as described in Section 15(e), all dispute, claim or controversy arising out of or relating to these Terms, other agreements found on the Services, or the breach, termination, enforcement, interpretation or validity thereof, including the determination of the scope or applicability of this agreement to arbitrate, shall be either determined by binding arbitration in [Hong Kong] before one arbitrator or submitted to small claims court in [Hong Kong]. If the arbitrator finds this location to be unreasonably burdensome to you, a new location may be selected or arbitration may be conducted over the phone, using video conferencing, or similar. You may be entitled to an in-person hearing near your place of residence. Judgment on the award may be entered in any court having jurisdiction. This clause shall not preclude parties from seeking provisional remedies in aid of arbitration from a court of appropriate jurisdiction. Any arbitration arising out of or related to these Terms shall be conducted in accordance with the expedited procedures set forth in the JAMS Comprehensive Arbitration Rules and Procedures as those Rules exist on the effective date of these Terms, including Rules 16.1 and 16.2 of those Rules.</p>
+                </li>
+                <li><strong>NO CLASS ACTIONS</strong>
+                    <p><strong>YOU AND WE AGREE THAT EACH MAY BRING CLAIMS AGAINST THE OTHER ONLY IN YOUR OR OUR INDIVIDUAL CAPACITY, AND NOT AS A PLAINTIFF OR CLASS MEMBER IN ANY PURPORTED CLASS OR REPRESENTATIVE PROCEEDING.</strong> Further, unless both you and we agree otherwise, the arbitrator may not consolidate more than one person's claims with your claims, and may not otherwise preside over any form of a representative or class proceeding. If this specific provision is found to be unenforceable, then the entirety of this arbitration provision shall be null and void. The arbitrator may award declaratory or injunctive relief only in favor of the individual party seeking relief and only to the extent necessary to provide relief warranted by that party's individual claim.</p>
+                </li>
+                <li><strong>Seeking Arbitration</strong>
+                    <p>If you elect to seek arbitration or file a small claim court action, you must first send to us, by certified mail, a written notice of your claim ("Notice"). The Notice to us must be addressed to: [Karacaibrahim Mah. Gazi Hasan Tepeli Sk. No: 28 İç Kapı No: 11 Merkez / Kırklareli, Türkiye]. If we initiate arbitration, we will send a written Notice to an email address you have previously provided to us, if available. We may also use any other means to contact you, including a message in your Account. A Notice, whether sent by you or by us, must (a) describe the nature and basis of the claim or dispute; and (b) set forth the specific relief sought ("Demand"). If you and we do not reach an agreement to resolve the claim within 30 days after the Notice is received, you or us may commence an arbitration proceeding or file a claim in small claims court. Arbitration forms can be downloaded from www.jamsadr.com. If you are required to pay a filing fee, after we receive Notice that you have commenced arbitration, we will promptly reimburse you for your payment of the filing fee, unless your claim is for greater than US$10,000 or the arbitrator determines the claims are frivolous, in which event you will be responsible for filing fees</p>
+                    <p><strong>Hearing:</strong> If your claim is for US$10,000 or less, we agree that you may choose whether the arbitration will be conducted solely on the basis of documents submitted to the arbitrator, through a telephonic or video hearing, or by an in-person hearing as established by the JAMS Rules. If your claim exceeds US$10,000, the right to a hearing will be determined by the JAMS Rules. In the event that the arbitration will be conducted solely on the basis of submitted documents, the arbitrator's decision and award will be made and delivered within six (6) months of the selection of the arbitrator, unless extended by the arbitrator. Except as expressly set forth herein, the payment of all filing, administration and arbitrator fees will be governed by the JAMS Rules.</p>
+                    <p><strong>Award:</strong> In the event arbitration awards you damages of an amount at least $100 greater than our last documented settlement offer, we will pay your awarded damages or $2,500, whichever is greater.</p>
+                    <p><strong>Injunctive Relief:</strong> Notwithstanding the foregoing, you and we both agree that you or we may sue in court to enjoin infringement or other misuse of intellectual property rights or in other scenarios where injunctive relief is appropriate. In the event a court or arbitrator having jurisdiction finds any portion of these Terms unenforceable, that portion shall not be effective and the remainder of these Terms shall remain effective. No waiver, express or implied, by either party of any breach of or default under these Terms will constitute a continuing waiver of such breach or default or be deemed to be a waiver of any preceding or subsequent breach or default.</p>
+                    <p><strong>Confidentiality:</strong> The parties shall maintain the confidential nature of the arbitration proceeding and the Award, including the hearing, except as may be necessary to prepare for or conduct the arbitration hearing on the merits, or except as may be necessary in connection with a court application for a preliminary remedy, a judicial challenge to an award or its enforcement, or unless otherwise required by law or judicial decision.</p>
+                </li>
+                <li><strong>Exception—Mass Arbitration Before NAM.</strong>
+                    <p>Notwithstanding the parties' decision to have arbitrations administered by an arbitrator in Hong Kong, in the event 25 or more demands for arbitration are filed relating to the same or similar subject matter and sharing common issues of law or fact, and counsel for the parties submitting the demands are the same or coordinated, you and we agree that the demands will constitute a "Mass Arbitration." If a Mass Arbitration is commenced, you and we agree that it shall not be governed by the JAMS Rules or administered by an arbitrator in Hong Kong. Instead, a Mass Arbitration shall be administered by National Arbitration &amp; Mediation ("NAM"), a nationally recognized arbitration provider, and governed by the NAM rules in effect when the Mass Arbitration is filed as modified by this Agreement, including the NAM Mass Filing Supplemental Dispute Resolution Rules, but excluding any rules that permit arbitration on a class-wide basis (collectively, the "NAM Rules"). The NAM Rules are available at www.namadr.com or by calling 1-800-358-2550. Notwithstanding anything to the contrary above, you and we agree that if either party fails or refuses to commence the Mass Arbitration before NAM, you or we may seek an order from a court of competent jurisdiction compelling compliance with this agreement and compelling administration of the Mass Arbitration before NAM. Pending resolution of any such requests to a court, you and we agree that all arbitrations comprising the Mass Arbitration (and any obligation to pay arbitration fees) shall be stayed. You and we acknowledge that either party's failure to comply with this paragraph would irreparably harm the other, and you and we agree that a court may issue an order staying the arbitrations (and any obligation to pay arbitration fees) until any disagreements over the provisions of this paragraph are resolved by the court.</p>
+                </li>
+                <li><strong>Governing Law and Rules</strong>
+                    <p>These Terms and the rights of the parties hereunder shall be governed by and construed in accordance with the laws of the State of California, exclusive of conflict or choice of law rules. The parties acknowledge that these Terms evidence a transaction involving interstate commerce. Notwithstanding the provision in the preceding paragraph with respect to applicable substantive law, any arbitration conducted pursuant to the terms of these Terms shall be governed by the Federal Arbitration Act (9 U.S.C., Secs. 1-16). In any arbitration arising out of or related to these Terms, the arbitrator is not empowered to award punitive or exemplary damages, except where permitted by statute, and the parties waive any right to recover any such damages. In any arbitration arising out of or related to these Terms, the arbitrator may not award any incidental, indirect or consequential damages, including damages for lost profits. The parties adopt and agree to implement the JAMS Optional Arbitration Appeal Procedure (as it exists on the effective date of this Agreement) with respect to any final award in an arbitration arising out of or related to these Terms.</p>
+                </li>
+                <li><strong>Additional Terms for Canadian Users</strong>
+                    <p>L'acheteur confirme son intention expresse que cet accord, ainsi que tous les documents connexes, soient rédigés en langue anglaise uniquement, y compris tous les avis et la correspondance.</p>
+                    <p><strong>Quebec Customers:</strong> For Quebec customers (or customers from other Canadian provinces where applicable) we will, if required, send at least 30 days before the amendment comes into force, a written notice drawn up clearly and legibly, setting out the new clause only, or the amended clause and the clause as it read formerly, the date of the coming into force of the amendment and the customer's right to refuse the amendment and rescind or, in the case of a contract involving sequential performance, cancel the contract without cost, penalty or cancellation indemnity by sending us a notice to that effect no later than 30 days after the amendment comes into force, if the amendment entails an increase in the customer's obligations or a reduction in our obligations.</p>
+                    <p><strong>Dispute Resolution:</strong> The arbitration requirements of these Terms will not apply to you if any such provision is unenforceable under the laws of your Canadian province of residence.</p>
+                    <p><strong>Cancellation Rights:</strong> Residents of certain provinces may have the right to cancel the provisions of certain purchases as required by local law. We will honor such cancellation rights.</p>
+                    <p><strong>Privacy and Consumer Complaints:</strong> Under relevant consumer protection laws, you are entitled to the following consumer rights notice: If you have a question or complaint regarding the Site, please send an e-mail to <a href="mailto:info@purevissage.com">info@purevissage.com</a>.</p>
+        </li>
+    </ol>
+        </li>
+
+        <li id="s16">
+            <h1>Warranty Disclaimer; Limitation on Liability</h1>
+            <ol>
+                <li><strong>Disclaimer of Warranties</strong>
+                    <p>TO THE EXTENT PERMITTED BY APPLICABLE LAW, OUR SERVICES ARE PROVIDED "AS IS" AND "AS AVAILABLE," WITHOUT WARRANTY OR CONDITIONS OF ANY KIND. BY OPERATING THE SERVICES, WE DO NOT MAKE ANY REPRESENTATIONS ABOUT OR IMPLY THAT WE ENDORSE ANY USER CONTENT OR CONTRIBUTIONS AVAILABLE ON OR LINKED TO BY THE SERVICES, INCLUDING WITHOUT LIMITATION, CONTENT OR CONTRIBUTIONS HOSTED ON THIRD PARTY SITES. WE CANNOT GUARANTEE AND DO NOT PROMISE ANY SPECIFIC RESULTS FROM USE OF THE SERVICES. NO ADVICE OR INFORMATION, WHETHER ORAL OR WRITTEN, OBTAINED BY YOU FROM US SHALL CREATE ANY WARRANTY NOT EXPRESSLY STATED IN THESE TERMS OF SERVICE. YOU AGREE THAT YOUR USE OF THE SERVICES WILL BE AT YOUR SOLE RISK. TO THE FULLEST EXTENT PERMITTED BY LAW, WE AND EACH OF OUR ADVERTISERS, LICENSORS, SUPPLIERS, OFFICERS, DIRECTORS, INVESTORS, EMPLOYEES, AGENTS, SERVICE PROVIDERS AND OTHER CONTRACTORS DISCLAIM ALL WARRANTIES, EXPRESS OR IMPLIED, IN CONNECTION WITH THE SERVICES AND YOUR USE THEREOF.</p>
+                    <p>TO THE EXTENT PERMITTED BY APPLICABLE LAW, WE MAKE NO WARRANTIES OR REPRESENTATIONS ABOUT THE ACCURACY, RELIABILITY, TIMELINESS OR COMPLETENESS OF THE SERVICE'S CONTENT, THE CONTENT OF ANY SITE LINKED TO THE SERVICES, CONTRIBUTIONS, INFORMATION OR ANY OTHER ITEMS OR MATERIALS ON OR LINKED TO BY THE SERVICES. WE ASSUME NO LIABILITY OR RESPONSIBILITY FOR ANY (A) ERRORS, MISTAKES OR INACCURACIES OF CONTENT AND MATERIALS, (B) PERSONAL INJURY OR PROPERTY DAMAGE, OF ANY NATURE WHATSOEVER, RESULTING FROM YOUR ACCESS TO AND USE OF THE SERVICES, (C) ANY UNAUTHORIZED ACCESS TO OR USE OF OUR SECURE SERVERS AND/OR ANY AND ALL PERSONAL INFORMATION STORED THEREIN, (D) ANY INTERRUPTION OR CESSATION OF TRANSMISSION TO OR FROM THE SERVICES, (E) ANY BUGS, VIRUSES, TROJAN HORSES, OR THE LIKE, WHICH MAY BE TRANSMITTED TO OR THROUGH THE SERVICES BY ANY THIRD PARTY, AND/OR (F) ANY ERRORS OR OMISSIONS IN ANY CONTENT AND MATERIALS OR FOR ANY LOSS OR DAMAGE OF ANY KIND INCURRED AS A RESULT OF THE USE OF ANY CONTENT POSTED, TRANSMITTED, OR OTHERWISE MADE AVAILABLE VIA THE SERVICES.</p>
+                </li>
+                <li><strong>Limited Liability.</strong>
+                    <p>TO THE EXTENT PERMITTED BY APPLICABLE LAW, IN NO EVENT SHALL WE BE LIABLE TO YOU OR ANY THIRD PARTY FOR ANY DAMAGES OF ANY KIND, INCLUDING ANY INDIRECT, CONSEQUENTIAL, INCIDENTAL, SPECIAL, PUNITIVE, OR LOST PROFIT DAMAGES ARISING OUT OF OR RELATING TO THESE TERMS OR THE USE OR INABILITY TO USE THE SERVICE, CONTRIBUTIONS, MATERIALS OR ANY OTHER CONTENT THEREIN, INCLUDING BUT NOT LIMITED TO DAMAGES CAUSED BY OR RELATED TO ERRORS, OMISSIONS, INTERRUPTIONS, DEFECTS, DELAY IN OPERATIONS OR TRANSMISSION, OR ANY COMPUTER VIRUS OR FAILURE.</p>
+                    <p>SOME JURISDICTIONS DO NOT ALLOW THE EXCLUSION OR LIMITATION OF LIABILITY FOR CONSEQUENTIAL OR INCIDENTAL DAMAGES, SO THE ABOVE LIMITATION MAY NOT APPLY TO YOU.</p>
+                    <p>NOTWITHSTANDING ANYTHING TO THE CONTRARY CONTAINED IN THESE TERMS OF SERVICE, OUR LIABILITY TO YOU IN RESPECT OF ANY LOSS OR DAMAGE SUFFERED BY YOU AND ARISING OUT OF OR IN CONNECTION WITH THESE TERMS OF SERVICE, WHETHER IN CONTRACT, TORT OR FOR BREACH OF STATUTORY DUTY OR IN ANY OTHER THEORY OF LIABILITY SHALL NOT EXCEED THE ACTUAL TOTAL AMOUNT RECEIVED BY US FROM YOU OR THE LOWEST LIABILITY LIMITATION ALLOWED BY APPLICABLE LAW.</p>
+        </li>
+    </ol>
+        </li>
+
+        <li id="s17">
+            <h1>Indemnity</h1>
+            <p>You agree to indemnify, defend and hold us and the Releasees and all of our directors, officers, employees, agents, shareholders, successors, assigns, and contractors harmless from and against any and all claims, damages, suits, actions, liabilities, judgments, losses, costs (including without limitation reasonable attorneys' fees) or other expenses that arise directly or indirectly out of or from (i) your breach of any provision of these Terms; (ii) your activities in connection with the Services; or (iii) the Content or other information you provide to us through the Services. We reserve the right, at your expense, to assume the exclusive defense and control of any matter for which you are required to indemnify us, and you agree to cooperate with our defense of these claims. We will use reasonable efforts to notify you of any such claim, action, or proceeding upon becoming aware of it.</p>
+        </li>
+
+        <li id="s18">
+            <h1>Notice to New Jersey Users</h1>
+            <p>Notwithstanding any terms set forth in these Terms of Service, if any of the provisions set forth in these Terms are held unenforceable, void or inapplicable under New Jersey law, then any such provision shall not apply to you, but the rest of these Terms of Service shall remain binding on you and the Company. In addition, for New Jersey residents, the limitation on liability is inapplicable where attorneys' fees, court costs, or other damages are mandated by statute. Notwithstanding any provision in these Terms of Service, nothing in these Terms of Service is intended to, nor shall it be deemed or construed to, limit any rights available to you under the Truth-in-Consumer Contract, Warranty and Notice Act.</p>
+        </li>
+
+        <li id="s19">
+            <h1>Notice to California Users</h1>
+            <p>Under California Civil Code Section 1789.3, users located in California entitled to the following consumer rights notice: If a user has a question or complaint regarding the Service, please send an email to <a href="mailto:info@purevissage.com">info@purevissage.com</a>. California residents may reach the Complaint Assistance Unit of the Division of Consumer Services of the California Department of Consumer Affairs by mail at 1625 North Market Blvd., Suite N 112, Sacramento, CA 95834, or by telephone at (916) 445-125 or (800) 952-5210.</p>
+        </li>
+
+        <li id="s20">
+            <h1>Digital Millennium Copyright Act Policy</h1>
+            <p>We follow the notice and takedown provisions of the Digital Millennium Copyright Act (the "DMCA"). This section describes the information that should be present in notices of alleged copyright infringement and the take down procedure we follow with respect to allegedly infringing material. If we receive proper notification of claimed copyright infringement, our response to these notices may include removing or disabling access to the allegedly infringing material and/or terminating or suspending users. If we remove or disable access in response to such a notice, we will make a good-faith attempt to contact the provider of the allegedly infringing content so that they may make a counter notification pursuant to the DMCA. It is our policy to accommodate and not interfere with standard technical measures used by copyright owners to identify or protect their copyrighted works that we determine are reasonable under the circumstances. In addition, we may terminate the account and access rights of any repeat infringer in appropriate circumstances. If you are a copyright owner or the legal agent of a copyright owner, and you believe that any User Content on the Service infringes upon your copyrights, you may submit a takedown notification to us by sending an email to <a href="mailto:info@purevissage.com">info@purevissage.com</a> with the Subject Line "DMCA Notice" and include the following:</p>
+            <ul>
+                <li>Identify the copyrighted work that you claim has been infringed;</li>
+                <li>Identify the material or link on our Services that you claim is infringing your copyrighted work;</li>
+                <li>Provide your full legal name, company affiliation, mailing address, telephone number, and email address; and</li>
+                <li>Include in the body of your notice the following statement, followed by your electronic or physical signature: "<em>I hereby state that the information in this Notice is accurate and, under penalty of perjury, that I am the owner, or authorized to act on behalf of, the owner, of the copyright or of an exclusive right under the copyright that is allegedly infringed.</em>"</li>
+    </ul>
+            <p>We will respond to all such notices, including as required or appropriate by removing the infringing material or disabling all links to the infringing material. We will terminate our user's access to and use of our Services if, under appropriate circumstances, the alleged user is determined to be a repeat infringer of the copyrights or other intellectual property rights of Meta Games or others.</p>
+        </li>
+
+        <li id="s21">
+            <h1>General Terms</h1>
+            <ol>
+                <li><strong>Non-Waiver.</strong>
+                    <p>Our failure to exercise or enforce any right or provision of these Terms of Service shall not operate as a waiver of the applicable right or provision.</p>
+                </li>
+                <li><strong>Severability.</strong>
+                    <p>These Terms of Service operate to the fullest extent permissible by law. If any provision or part of a provision of these Terms of Service is unlawful, void, or unenforceable, that provision or part of the provision is deemed severable from these Terms of Service and shall not affect the validity and enforceability of any remaining provisions.</p>
+                </li>
+                <li><strong>Assignment.</strong>
+                    <p>You may not assign or transfer these Terms, by operation of law or otherwise, without our prior written consent. Any attempt by you to assign or transfer these Terms, without such consent, will be null and of no effect. We may freely assign or transfer these Terms without restriction. Subject to the foregoing, these Terms will bind and inure to the benefit of the parties, their successors and permitted assigns.</p>
+                </li>
+                <li><strong>No Modifications by Our Employees.</strong>
+                    <p>If any of our employees offers to modify the terms of these Terms of Service, he or she is not acting as an agent for us or speaking on our behalf. You may not rely on, and should not act in reliance on, any statement or communication from our employees or anyone else purporting to act on our behalf.</p>
+                </li>
+                <li><strong>Mobile Services</strong>
+                    <p>Some of the Services may be available via your mobile phone through the Apps you have downloaded and installed on your mobile phone. Please note that your carrier's normal messaging, data and other rates and fees will still apply. You should check with your carrier to find out what plans are available and how much they cost. In addition, downloading, installing, or using certain mobile services may be prohibited or restricted by your carrier, and not all mobile services may work with all carriers or devices in all jurisdictions. Therefore, you should check with your carrier to find out if the Apps and Services are available for your mobile devices, and what restrictions, if any, may be applicable to your use of them.</p>
+                </li>
+                <li><strong>Entire Agreement; No Waiver</strong>
+                    <p>The Terms of Service and any other legal notices published on the Apps or Services, shall constitute the entire agreement between you and us concerning the Services, and supersedes all prior terms, agreements, discussions and writings regarding the Services. If any provision of the Terms of Service is found to be unenforceable, then that provision shall not affect the validity of the remaining provisions of the Terms of Service, which shall remain in full force and effect.</p>
+                    <p>No waiver of any term of the Terms of Service shall be deemed a further or continuing waiver of such term or any other term. Our failure to assert any right or provision under the Terms of Service shall not constitute a waiver of such right or provision.</p>
+                </li>
+                <li><strong>Consent to Communication</strong>
+                    <p>When you use the Services or send communications to us through the Services, you are communicating with us electronically. You consent to receive electronically any communications related to your use of the Services. We may communicate with you by email or by posting notices on the Websites or Apps. You agree that all agreements, notices, disclosures and other communications that are provided to you electronically satisfy any legal requirement that such communications be in writing. All notices from us intended for receipt by you shall be deemed delivered and effective when sent to the email address you provide to us. Please note that by submitting User Content, creating an Account, or otherwise providing us with your email address, postal address or phone number, you are agreeing that we or our agents may contact you at that address or number in a manner consistent with our Privacy Policy.</p>
+        </li>
+    </ol>
+        </li>
+
+        <li id="s22">
+            <h1>Contact information</h1>
+            <p>If you have any questions about these Terms of Service or your account, please contact us at <a href="mailto:info@purevissage.com">info@purevissage.com</a>.</p>
+        </li>
+    </ol>
+</body>
+
+</html>

@@ -3,3 +3,5 @@ Allow: /app-ads.txt
 
 User-agent: *
 Disallow:
+
+Sitemap: https://purevissage.com/sitemap.xml
